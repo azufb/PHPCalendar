@@ -34,8 +34,32 @@
     $lastDay->setDate($year, $month, $diffDays);
     echo '<br />'.$lastDay->format('Y-m-d');
     $last = $lastDay->format('l');
-    echo '<br />'.$last;
-
-    $calendarArray = [];
+    echo '<br />'.$last.'<br />';
     
+    // dateメソッドは、ローカルの日付・時刻を書式化する
+    $today = date('F j, Y, g:i:a');
+    echo $today.'<br />';
+    $today = date('t');
+    echo $today.'<br />';
+    $today = date('w');
+    echo $today.'<br />';
+    /* 
+    0->日
+    1->月
+    2->火
+    3->水
+    4->木
+    5->金
+    6->土
+    */
+
+    $n = strtotime("now");
+    echo $n.'<br />';
+    
+    $e = date('t', strtotime($year.$month.'01'));
+    echo $e.'<br />';
+    $end = date('t', strtotime($year.$nextMonth.'01'));
+    echo $end.'<br />';
+    $tw = date('j');
+    echo $tw.'<br />';
 ?>
