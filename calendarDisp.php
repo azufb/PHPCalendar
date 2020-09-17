@@ -45,7 +45,7 @@
                 }
             }
             // json_encodeで保存。
-            file_put_contents($FILE, json_encode[$NEWBOARD]);
+            file_put_contents($FILE, json_encode($NEWBOARD));
         }
         // webページ更新。
         header('Location:'.$_SERVER['SCRIPT_NAME']);
@@ -58,50 +58,56 @@
     <head>
         <meta charset='UTF-8'>
         <title>Calendar is here!</title>
+        <link rel='stylesheet' href='./style.css'>
     </head>
     <body>
         <h1>
-            <?php echo $year.'年'.$month.'月の'?>Calendarとタスク
+            <?php echo $year.'年'.$month.'月の'?>Calendar&Tasks
         </h1>
-        <table>
-            <tr>
-                <?php foreach ($weekArray as $week) { ?>
-                    <th><?php echo $week ?></th>
-                <?php } ?>
-            </tr>
-            <?php foreach ($calendarArray as $calendarDay) { ?>
+        <div class='displays'>
+            <table class='calendar'>
                 <tr>
-                    <?php foreach ($calendarDay as $day) { ?>
-                        <?php if ($day != date('j')) { ?>
-                            <td><?php echo $day ?></td>
-                        <?php } else { ?>
-                            <td><?php echo $day ?></td>
-                        <?php } ?>
+                    <?php foreach ($weekArray as $week) { ?>
+                        <th><?php echo $week ?></th>
                     <?php } ?>
                 </tr>
-            <?php } ?>
-        </table>
-        
-        <h2>タスクリスト</h2>
-        <form method='post'>
-            <input type='text' name='txt'>
-            <input type='submit' value='ADD'>
-        </form>
-        <table>
-        <?php foreach ($BOARD as $DATA) : ?>
-            <tr>
+                <?php foreach ($calendarArray as $calendarDay) { ?>
+                    <tr>
+                        <?php foreach ($calendarDay as $day) { ?>
+                            <?php if ($day != date('j')) { ?>
+                                <td><?php echo $day ?></td>
+                            <?php } else { ?>
+                                <td><?php echo $day ?></td>
+                            <?php } ?>
+                        <?php } ?>
+                    </tr>
+                <?php } ?>
+            </table>
+            
+            <div>
                 <form method='post'>
-                    <td>
-                        <!--タスク-->
-                        <?php echo h($DATA[1]); ?>
-                    </td>
-                    <td>
-                        <input type='hidden' name= 'del' value= '<?php echo $DATA[0]; ?>'>
-                        <input type= 'submit' value= 'DELETE'>
-                    </td>
+                    <h2>タスクリスト</h2>
+                    <input type='text' name='txt'>
+                    <input type='submit' value='➕'>
                 </form>
-            </tr>
-        <?php endforeach; ?>
-        </table>
+                <div class='tasks'>
+                    <?php foreach ($BOARD as $DATA) : ?>
+                        <ul>
+                            <form method='post'>
+                                <li>
+                                    <!--タスク-->
+                                    <input type='checkbox'>
+                                    <?php echo h($DATA[1]); ?>
+                                
+                                
+                                    <input type='hidden' name= 'del' value= '<?php echo $DATA[0]; ?>'>
+                                    <input type= 'submit' value= '✖️'>
+                                </li>
+                            </form>
+                        </ul>
+                    <?php endforeach; ?>
+                    </div>
+            </div>
+        </div>
     </body>
 </html>
