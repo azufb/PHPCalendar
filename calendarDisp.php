@@ -66,7 +66,7 @@
         </h1>
         <div class='displays'>
             <table class='calendar'>
-                <tr>
+                <tr class='week'>
                     <?php foreach ($weekArray as $week) { ?>
                         <th><?php echo $week ?></th>
                     <?php } ?>
@@ -106,8 +106,11 @@
                             </form>
                         </ul>
                     <?php endforeach; ?>
-                    </div>
+                </div>
             </div>
         </div>
+        <footer>
+            &copy;All Right Reserved By Azusa Okamoto.
+        </footer>
     </body>
 </html>

@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.displays {
+    display: flex;
+    margin-left: 20%;
+}
+
+.calendar {
+    margin-right: 40px;
+    font-size: 25px;
+    border: 1px solid black;
+}
+
+h2 {
+    font-size: 25px;
+    margin-top: 0px;
+}
+
+th {
+    padding: 0px;
+    border-bottom: 5px solid plum;
+}
+
+input {
+    font-size: 25px;
+}
+
+.tasks {
+    font-size: 25px;
+}
+
+ul li {
+    list-style: none;
+}
+
+footer {
+    margin-top: auto;
+}
