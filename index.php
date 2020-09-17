@@ -96,7 +96,6 @@
                             <form method='post'>
                                 <li>
                                     <!--タスク-->
-                                    <input type='checkbox'>
                                     <?php echo h($DATA[1]); ?>
                                 
                                 
