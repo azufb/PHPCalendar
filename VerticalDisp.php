@@ -20,9 +20,7 @@
                     <?php echo $value['day'] ?>(<?php echo $weekArray[$value['week']] ?>)
                 </td>
                 <td>
-                    <?php if (isset($value['text'])) { ?>
-                        <input type='text'><?php echo $value['text'] ?></input>
-                    <?php } ?>
+                    <?php echo $value['text']  ?>
                 </td>
             </tr>
         <?php } ?>

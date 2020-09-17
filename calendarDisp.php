@@ -9,6 +9,9 @@ require_once('Calendar.php');
         <title>Calendar is here!</title>
     </head>
     <body>
+        <h1>
+            <?php echo $year.'年'.$month.'月の'?>Calendar
+        </h1>
         <table>
             <tr>
                 <?php foreach ($weekArray as $week) { ?>
