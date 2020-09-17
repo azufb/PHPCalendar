@@ -61,7 +61,7 @@
     </head>
     <body>
         <h1>
-            <?php echo $year.'年'.$month.'月の'?>Calendar
+            <?php echo $year.'年'.$month.'月の'?>Calendarとタスク
         </h1>
         <table>
             <tr>
@@ -81,13 +81,14 @@
                 </tr>
             <?php } ?>
         </table>
-
+        
+        <h2>タスクリスト</h2>
         <form method='post'>
             <input type='text' name='txt'>
             <input type='submit' value='ADD'>
         </form>
         <table>
-        <?php foreach ((array)$BOARD as $DATA) : ?>
+        <?php foreach ($BOARD as $DATA) : ?>
             <tr>
                 <form method='post'>
                     <td>
