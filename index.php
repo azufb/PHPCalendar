@@ -57,12 +57,12 @@
 <html>
     <head>
         <meta charset='UTF-8'>
-        <title>Calendar is here!</title>
+        <title>Calendar & Tasks</title>
         <link rel='stylesheet' href='./style.css'>
     </head>
     <body>
         <h1>
-            <?php echo $year.'年'.$month.'月の'?>Calendar&Tasks
+            <?php echo $year.'年'.$month.'月の'?>Calendar & Tasks
         </h1>
         <div class='displays'>
             <table class='calendar'>
