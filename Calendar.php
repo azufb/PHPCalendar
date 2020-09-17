@@ -15,16 +15,13 @@
             $month = date('m');
 
             // 今月末日を取得する。月末日の取得は、t。
-            $endOfThisMonth = date('t');
-            echo $endOfThisMonth.'<br />';
+            $endOfThisMonth = date('t', strtotime($year.$month.'01'));
 
             // 1日の曜日を取得する。曜日の取得は、w。
             $firstDay = date('w', strtotime($year.$month.'01'));
-            echo $firstDay.'<br />';
 
             // 今月末日の曜日を取得する。
             $lastDay = date('w', strtotime($year.$month.$endOfThisMonth));
-            echo $lastDay.'<br />';
 
             $calendarArray = [];
             $j = 0;
