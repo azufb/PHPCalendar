@@ -4,7 +4,7 @@
     $year = date('Y');
     $month = date('m');
 
-    $endOfThisMonth = date('t', strtotime($year.$month.'01'));
+    $endOfThisMonth = date('t');
 
     // スケジュール
     $scheduleArray = [];
